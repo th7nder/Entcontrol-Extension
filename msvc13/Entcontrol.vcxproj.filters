@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="SourceMod SDK">
+      <UniqueIdentifier>{31958233-BB2D-4e41-A8F9-CE8A4684F436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{449d20bf-fb1b-4f8e-baee-84ee6f6cbb68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{32d22f95-c288-47b1-bc51-9e5da874c0c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Navigation">
+      <UniqueIdentifier>{c6e21f4b-9610-4ad6-a5da-0ed5f8bdf63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Navigation">
+      <UniqueIdentifier>{eb9eff87-137e-4570-a5b6-93c72b808070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HLLib">
+      <UniqueIdentifier>{64a1d5f3-9798-4602-982f-df9629394641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HLLib">
+      <UniqueIdentifier>{f11a84d8-e815-410c-9f90-80e0caf1e9cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HLLib\HLLib">
+      <UniqueIdentifier>{d8cd67fa-37d4-4094-b0fb-d04d0e4915dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HLLib\HLLib">
+      <UniqueIdentifier>{1008667d-e304-45ed-af93-1aea946fab7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dlib">
+      <UniqueIdentifier>{77b4cdd4-f8b7-4b3a-8256-5217e339b3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Webserver">
+      <UniqueIdentifier>{0463cb67-3787-47cf-ad60-da776ffc4991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Webserver">
+      <UniqueIdentifier>{4d6f61e2-fee8-42a0-8733-71429bd36874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Makefile">
+      <UniqueIdentifier>{36d124d6-b250-48ea-9ff6-ab0d8ec3960a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\STLish">
+      <UniqueIdentifier>{e35ebc68-568b-43c4-9135-97b661f1972c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Bugs">
+      <UniqueIdentifier>{2d05f191-a419-4322-90da-80d27ec7d8e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Bugs">
+      <UniqueIdentifier>{4efcbec3-ec50-4c30-929c-993b1c25a644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LGN">
+      <UniqueIdentifier>{7509d22a-a9d6-4a3d-bdde-9bde21a7d53f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LGN">
+      <UniqueIdentifier>{04b02de0-bf63-4722-bb46-faac7ae97a46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\extension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\smsdk_ext.cpp">
+      <Filter>SourceMod SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Entity\EntityOutput.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMesh.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshArea.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshConnection.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshCornerLightIntensity.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshEncounterPath.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshEncounterSpot.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshHidingSpot.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshLadder.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshLadderConnection.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshLoader.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshPlace.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\NavMeshVisibleArea.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\natives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\BSPFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Checksum.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\DebugMemory.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\DirectoryFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\DirectoryFolder.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\DirectoryItem.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Error.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\FileMapping.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\FileStream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\GCFFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\GCFStream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\HLLib.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Mapping.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\MappingStream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\MemoryMapping.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\MemoryStream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\NCFFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\NullStream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Package.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\PAKFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\ProcStream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\SGAFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Stream.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\StreamMapping.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Utility.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\VBSPFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\VPKFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\WADFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\Wrapper.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\XZPFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLib\ZIPFile.cpp">
+      <Filter>Source Files\HLLib\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HLLib\HLLibWrapper.cpp">
+      <Filter>Source Files\HLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Webserver\HTTP.cpp">
+      <Filter>Source Files\Webserver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Webserver\Parser.cpp">
+      <Filter>Source Files\Webserver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Nav\Navigation.cpp">
+      <Filter>Source Files\Navigation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dlib.cpp">
+      <Filter>Source Files\Dlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Bugs\Bugs.cpp">
+      <Filter>Source Files\Bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LGN\LGN.cpp">
+      <Filter>Source Files\LGN</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\smsdk_config.h">
+      <Filter>SourceMod SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\smsdk_ext.h">
+      <Filter>SourceMod SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Entity\EntityOutput.hpp">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMesh.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshArea.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshConnection.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshCornerLightIntensity.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshEncounterPath.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshEncounterSpot.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshHidingSpot.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshLadder.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshLadderConnection.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshLoader.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshPlace.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\INavMeshVisibleArea.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavCornerType.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavDirType.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavLadderDirType.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMesh.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshArea.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshConnection.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshCornerLightIntensity.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshEncounterPath.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshEncounterSpot.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshHidingSpot.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshLadder.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshLadderConnection.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshLoader.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshPlace.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\NavMeshVisibleArea.h">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\BSPFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Checksum.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\DebugMemory.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\DirectoryFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\DirectoryFolder.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\DirectoryItem.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\DirectoryItems.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Error.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\FileMapping.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\FileStream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\GCFFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\GCFStream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\HLLib.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Mapping.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Mappings.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\MappingStream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\MemoryMapping.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\MemoryStream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\NCFFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\NullStream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Package.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Packages.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\PAKFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\ProcStream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\resource.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\SGAFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\stdafx.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Stream.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\StreamMapping.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Streams.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Utility.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\VBSPFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\VPKFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\WADFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\Wrapper.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\XZPFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLib\ZIPFile.h">
+      <Filter>Header Files\HLLib\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HLLib\HLLibWrapper.hpp">
+      <Filter>Header Files\HLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\helper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Webserver\HTTP.hpp">
+      <Filter>Header Files\Webserver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Webserver\Parser.hpp">
+      <Filter>Header Files\Webserver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Nav\Navigation.hpp">
+      <Filter>Header Files\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\STLish\IList.h">
+      <Filter>Header Files\STLish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\STLish\IMap.h">
+      <Filter>Header Files\STLish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\STLish\List.h">
+      <Filter>Header Files\STLish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\STLish\Map.h">
+      <Filter>Header Files\STLish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bugs\Bugs.hpp">
+      <Filter>Header Files\Bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LGN\LGN.hpp">
+      <Filter>Header Files\LGN</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Makefile">
+      <Filter>Makefile</Filter>
+    </None>
+  </ItemGroup>
+</Project>
