@@ -44,10 +44,10 @@ namespace Navigation
 
 		// Remove all the stored positions
 		gHidingSpots.clear();
-
+        printf("deleting gNavMesh\n");
 		if (gNavMesh) // Already loaded? Maybe a new map?
 			delete gNavMesh;
-
+        printf("deleted gNavMesh\n");
 		std::string relativePath, absolutePath;
 		absolutePath = gamepath;
 		absolutePath += "/maps/";
@@ -105,8 +105,11 @@ namespace Navigation
 			}
 		}
 
+        printf("hllib close");
+
 		HLLib::Close();
 
+        printf("new Navigation::NavMeshLoader\n");
 		Navigation::NavMeshLoader *nav = new Navigation::NavMeshLoader(mapname); 
 
 		char error[1024];

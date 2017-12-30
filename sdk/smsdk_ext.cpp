@@ -446,7 +446,7 @@ bool SDKExtension::SDK_OnMetamodPauseChange(bool paused, char *error, size_t max
 #endif
 
 /* Overload a few things to prevent libstdc++ linking */
-#if defined __linux__ || defined __APPLE__
+/*#if defined __linux__ || defined __APPLE__
 extern "C" void __cxa_pure_virtual(void)
 {
 }
@@ -470,5 +470,5 @@ void operator delete[](void * ptr)
 {
 	free(ptr);
 }
-#endif
+#endif*/
 
