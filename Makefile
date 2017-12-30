@@ -6,6 +6,7 @@
 ###########################################
 
 SMSDK = ../..
+SPSDK = ../../sourcepawn/include
 HL2SDK_ORIG = ../../../hl2sdk
 HL2SDK_OB = ../../../hl2sdk-ob
 HL2SDK_CSS = ../../../hl2sdk-css
@@ -13,13 +14,14 @@ HL2SDK_OB_VALVE = ../../../hl2sdk-ob-valve
 HL2SDK_L4D = ../../../hl2sdk-l4d
 HL2SDK_L4D2 = ../../../hl2sdk-l4d2
 HL2SDK_CSGO = ../../../hl2sdk-csgo
-MMSOURCE19 = ../../../metamod
+MMSOURCE19 = ../../../mmsource-1.10
 
 #####################################
 ### EDIT BELOW FOR OTHER PROJECTS ###
 #####################################
 
 PROJECT = entcontrol
+ENGINE = csgo
 
 #Uncomment for Metamod: Source enabled extension
 USEMETA = true
@@ -109,7 +111,7 @@ else
 	LIB_SUFFIX = .$(LIB_EXT)
 endif
 
-INCLUDE += -I. -I.. -Isdk -I$(SMSDK)/public -I$(SMSDK)/public/extensions -I$(SMSDK)/public/sourcepawn -I$(HL2SDK)/public/ -I$(HL2SDK)/public/tier0 -I$(HL2SDK)/public/tier1 -I$(HL2SDK)/game/server -I$(HL2SDK)/game/shared -I/usr/lib/dlib/
+INCLUDE += -I. -I.. -Isdk -I$(SPSDK) -I$(SMSDK)/public -I$(SMSDK)/public/extensions -I$(SMSDK)/public/sourcepawn -I$(HL2SDK)/public/ -I$(HL2SDK)/public/tier0 -I$(HL2SDK)/public/tier1 -I$(HL2SDK)/game/server -I$(HL2SDK)/game/shared -I/usr/lib/dlib/
 
 ifeq "$(USEMETA)" "true"
 	LINK_HL2 = $(HL2LIB)/tier1_i486.a

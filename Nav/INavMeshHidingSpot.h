@@ -14,6 +14,7 @@ namespace Navigation {
 	 */
 	class INavMeshHidingSpot {
 	public:
+		virtual ~INavMeshHidingSpot() {};
 		/**
 		 * Destroy the instance.
 		 */

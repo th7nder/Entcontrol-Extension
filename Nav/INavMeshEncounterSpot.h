@@ -7,6 +7,7 @@ namespace Navigation {
 	 */
 	class INavMeshEncounterSpot {
 	public:
+		virtual ~INavMeshEncounterSpot() {};
 		/**
 		 * Destroy the instance.
 		 */

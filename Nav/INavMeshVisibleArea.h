@@ -14,6 +14,7 @@ namespace Navigation {
 	 */
 	class INavMeshVisibleArea {
 	public:
+		virtual ~INavMeshVisibleArea() {};
 		/**
 		 * Destroy the instance.
 		 */

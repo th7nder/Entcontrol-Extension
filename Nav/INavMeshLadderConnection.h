@@ -16,6 +16,7 @@ namespace Navigation {
 	 */
 	class INavMeshLadderConnection {
 	public:
+		virtual ~INavMeshLadderConnection() {};
 		/**
 		 * Destroy the instance.
 		 */

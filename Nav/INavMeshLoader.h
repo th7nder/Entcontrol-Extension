@@ -16,6 +16,7 @@ namespace Navigation {
 	 */
 	class INavMeshLoader {
 	public:
+		virtual ~INavMeshLoader() {};
 		/**
 		 * Destroy the instance.
 		 */

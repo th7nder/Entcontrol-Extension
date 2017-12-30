@@ -16,6 +16,7 @@ namespace Navigation {
 	 */
 	class INavMeshCornerLightIntensity {
 	public:
+		virtual ~INavMeshCornerLightIntensity() {};
 		/**
 		 * Destroy the instance.
 		 */
