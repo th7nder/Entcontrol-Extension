@@ -135,7 +135,7 @@ LINK += -m32 -lm -ldl
 CFLAGS += -DPOSIX -Dstricmp=strcasecmp -D_stricmp=strcasecmp -D_strnicmp=strncasecmp -Dstrnicmp=strncasecmp \
 	-D_snprintf=snprintf -D_vsnprintf=vsnprintf -D_alloca=alloca -Dstrcmpi=strcasecmp -DCOMPILER_GCC -Wall -Werror \
 	-Wno-overloaded-virtual -Wno-switch -Wno-unused -msse -DSOURCEMOD_BUILD -DHAVE_STDINT_H -m32 -DDLIB_NO_GUI_SUPPORT
-CPPFLAGS += -Wno-non-virtual-dtor -std=c++0x
+CPPFLAGS += -Wno-non-virtual-dtor -std=c++11
 # -fno-exceptions -fno-rtti
 
 ################################################
@@ -164,7 +164,7 @@ ifeq "$(OS)" "Darwin"
 else
 	LIB_EXT = so
 	CFLAGS += -D_LINUX
-	LINK += -shared
+	LINK += -shared -lstdc++ 
 endif
 
 IS_CLANG := $(shell $(CPP) --version | head -1 | grep clang > /dev/null && echo "1" || echo "0")
