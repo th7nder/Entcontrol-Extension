@@ -146,6 +146,7 @@ namespace Navigation {
 
 		//META_CONPRINTF("Nav version: %d; BSPSize: %d; MagicNumber: %p; SubVersion: %d [v10+only]; Place Count: %d\n", version, saveBspSize, magicNumber, navMeshSubVersion, placeCount);
 
+		printf("allocationg places\n");
 		List<INavMeshPlace*> *places = new List<INavMeshPlace*>();
 
 		for(unsigned int placeIndex = 0; placeIndex < placeCount; placeIndex++) {
@@ -156,9 +157,12 @@ namespace Navigation {
 			char placeName[256];
 			this->ReadData(placeName, sizeof(unsigned char), placeSize, fileHandle);
 
+			printf("new esh place\n");
 			places->Append(new NavMeshPlace(placeIndex + 1, placeName));
 			//META_CONPRINTF("Parsed place: %s [%d]\n", placeName, placeIndex);
 		}
+
+		printf("red places\n");
 
 		unsigned char unnamedAreas = 0;
 		if(version > 11) {
@@ -169,13 +173,15 @@ namespace Navigation {
 
 		//META_CONPRINTF("Has unnamed areas: %s\n", hasUnnamedAreas ? "yes" : "no");
 
+		printf("allocating areas\n");
 		IList<INavMeshArea*> *areas = new List<INavMeshArea*>();
+
 
 		unsigned int areaCount;
 		this->ReadData(&areaCount, sizeof(unsigned int), 1, fileHandle);
 
 		//META_CONPRINTF("Area count: %d\n", areaCount);
-
+		printf("reading areas\n");
 		for(unsigned int areaIndex = 0; areaIndex < areaCount; areaIndex++) {
 			unsigned int areaID;
 			float x1, y1, z1, x2, y2, z2;
@@ -384,6 +390,8 @@ namespace Navigation {
 				}
 			}
 
+
+			printf("new esh area\n");
 			INavMeshArea *area = new NavMeshArea(areaID, areaFlags, placeID, x1, y1, z1, x2, y2, z2,
 				northEastCornerZ, southWestCornerZ, connections, hidingSpots, encounterPaths, ladderConnections,
 				cornerLightIntensities, visibleAreas, inheritVisibilityFrom, earliestOccupyTimeFirstTeam, earliestOccupyTimeSecondTeam, unk01);
@@ -391,10 +399,13 @@ namespace Navigation {
 			areas->Append(area);
 		}
 
+		printf("redd areas\n");
+
 		unsigned int ladderCount;
 		this->ReadData(&ladderCount, sizeof(unsigned int), 1, fileHandle);
 		
 		//META_CONPRINTF("Ladder count: %d\n", ladderCount);
+		printf("reading ladders\n");
 		IList<INavMeshLadder*> *ladders = new List<INavMeshLadder*>();
 
 		for(unsigned int ladderIndex = 0; ladderIndex < ladderCount; ladderIndex++) {
@@ -434,12 +445,14 @@ namespace Navigation {
 			unsigned int ladderBottomAreaID;
 			this->ReadData(&ladderBottomAreaID, sizeof(unsigned int), 1, fileHandle);
 			
+			printf("new esh ladders\n");
 			INavMeshLadder *ladder = new NavMeshLadder(ladderID, ladderWidth, ladderLength, ladderTopX, ladderTopY, ladderTopZ,
 				ladderBottomX, ladderBottomY, ladderBottomZ, (NavDirType)ladderDirection,
 				ladderTopForwardAreaID, ladderTopLeftAreaID, ladderTopRightAreaID, ladderTopBehindAreaID, ladderBottomAreaID);
 
 			ladders->Append(ladder);
 		}
+		printf("red ladders\n");
 
 		fclose(fileHandle);
 		INavMesh *mesh = new NavMesh(magicNumber, version, navMeshSubVersion, saveBspSize, isMeshAnalyzed, places, areas, ladders);
