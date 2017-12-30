@@ -6,7 +6,7 @@
 */
 
 #include "NavMesh.h"
-
+#include "stdio.h"
 namespace Navigation {
 	NavMesh::NavMesh(unsigned int magicNumber, unsigned int version, unsigned int subVersion, unsigned int saveBSPSize, bool isMeshAnalyzed,
 		IList<INavMeshPlace*> *places, IList<INavMeshArea*> *areas, IList<INavMeshLadder*> *ladders) {
@@ -21,25 +21,35 @@ namespace Navigation {
 	}
 
 	NavMesh::~NavMesh() {
-		unsigned int placeCount = this->places->Size();
+	    printf("navmesh destroy\n");
+    	unsigned int placeCount = this->places->Size();
 
 		for(unsigned int placeIndex = 0; placeIndex < placeCount; placeIndex++) {
 			INavMeshPlace *place = this->places->At(placeIndex);
 
 			place->Destroy();
 		}
+        
+        printf("place destroy\n");
 
 		this->places->Destroy();
 
-		unsigned int areaCount = this->places->Size();
+        printf("places destroy\n");
 
-		for(unsigned int areaIndex = 0; areaIndex < placeCount; areaIndex++) {
-			INavMeshArea *area = this->areas->At(areaIndex);
+		unsigned int areaCount = this->areas->Size();
 
+		for(unsigned int areaIndex = 0; areaIndex < placeCount; areaIndex++) {	
+            printf("accessing area %d\n", areaIndex);
+            INavMeshArea *area = this->areas->At(areaIndex);
+            printf("destroying area %d\n", areaIndex);
 			area->Destroy();
 		}
+
+        printf("area destroyed\n");
 		
 		this->areas->Destroy();
+
+        printf("areas destroy\n");
 
 		unsigned int ladderCount = this->ladders->Size();
 
@@ -49,7 +59,10 @@ namespace Navigation {
 			ladder->Destroy();
 		}
 
+        printf("ladder destroy\n");
+
 		this->ladders->Destroy();
+        printf("ladders destroyed\n");
 	}
 
 	void NavMesh::Destroy() {

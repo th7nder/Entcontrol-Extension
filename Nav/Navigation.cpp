@@ -26,7 +26,7 @@
 
 namespace Navigation
 {
-	Navigation::INavMesh *gNavMesh;
+	Navigation::INavMesh *gNavMesh = NULL;
 	unsigned int gHidingSpotsCount;
 	std::vector<Navigation::INavMeshHidingSpot*> gHidingSpots;
 
@@ -45,8 +45,11 @@ namespace Navigation
 		// Remove all the stored positions
 		gHidingSpots.clear();
         printf("deleting gNavMesh\n");
-		if (gNavMesh) // Already loaded? Maybe a new map?
-			delete gNavMesh;
+        if (gNavMesh)
+        {
+            delete gNavMesh;
+            gNavMesh = NULL;
+        } // Already loaded? Maybe a new map?
         printf("deleted gNavMesh\n");
 		std::string relativePath, absolutePath;
 		absolutePath = gamepath;
