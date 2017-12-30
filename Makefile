@@ -26,7 +26,7 @@ ENGINE = csgo
 #Uncomment for Metamod: Source enabled extension
 USEMETA = true
 
-OBJECTS = sdk/smsdk_ext.cpp extension.cpp natives.cpp Helper.cpp Entity/EntityOutput.cpp Webserver/HTTP.cpp Webserver/Parser.cpp LGN/LGN.cpp Dlib.cpp $(wildcard Nav/*.cpp) $(wildcard HLLib/HLLib/*.cpp) $(wildcard HLLib/*.cpp)
+OBJECTS = sdk/smsdk_ext.cpp extension.cpp natives.cpp Helper.cpp Bugs.cpp Entity/EntityOutput.cpp Webserver/HTTP.cpp Webserver/Parser.cpp LGN/LGN.cpp Dlib.cpp $(wildcard Nav/*.cpp) $(wildcard HLLib/HLLib/*.cpp) $(wildcard HLLib/*.cpp)
 
 ##############################################
 ### CONFIGURE ANY OTHER FLAGS/OPTIONS HERE ###
