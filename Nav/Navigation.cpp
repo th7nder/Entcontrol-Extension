@@ -111,6 +111,11 @@ namespace Navigation
 
 		char error[1024];
 		gNavMesh = nav->Load(error, sizeof(error));
+		if(gNavMesh == NULL)
+		{
+			printf("gNavMeshError, null: %s", error);
+			return false;
+		}
 
 		// Nav is not needed anylonger
 		nav->Destroy();
