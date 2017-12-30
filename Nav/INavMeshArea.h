@@ -33,7 +33,6 @@ namespace Navigation {
 		/**
 		 * Destroy the instance.
 		 */
-		virtual ~INavMeshArea() {};
 		virtual void Destroy() = 0;
 
 		/**
