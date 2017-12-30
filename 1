@@ -36,7 +36,7 @@ C_OPT_FLAGS = -DNDEBUG -O3 -funroll-loops -pipe -fno-strict-aliasing
 C_DEBUG_FLAGS = -D_DEBUG -DDEBUG -g -ggdb3
 C_GCC4_FLAGS = -fvisibility=hidden
 CPP_GCC4_FLAGS = -fvisibility-inlines-hidden
-CPP = gcc -Wno-delete-non-virtual-dtor -Wno-sign-compare -Wno-maybe-uninitialized
+CPP = gcc -Wno-sign-compare
 CPP_OSX = clang
 
 ##########################
@@ -218,9 +218,9 @@ all: check
 	mkdir -p $(BIN_DIR)/Updater
 	mkdir -p $(BIN_DIR)/LGN
 	if [ "$(USEMETA)" = "true" ]; then \
-		ln -sf $(HL2LIB)/$(LIB_PREFIX)vstdlib$(LIB_SUFFIX); \
-		ln -sf $(HL2LIB)/$(LIB_PREFIX)tier0$(LIB_SUFFIX); \
-		ln -sf $(HL2LIB)/$(LIB_PREFIX)tier1$(LIB_SUFFIX); \
+		ln -sf $(HL2LIB)/$(LIB_PREFIX)vstdlib_srv$(LIB_SUFFIX); \
+		ln -sf $(HL2LIB)/$(LIB_PREFIX)tier0_srv$(LIB_SUFFIX); \
+		ln -sf $(HL2LIB)/$(LIB_PREFIX)tier1_srv$(LIB_SUFFIX); \
 	fi
 	$(MAKE) -f $(MAKEFILE_NAME) extension
 
