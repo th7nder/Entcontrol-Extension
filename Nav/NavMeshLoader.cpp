@@ -139,12 +139,12 @@ namespace Navigation {
 
 		bool isMeshAnalyzed = meshAnalyzed != 0;
 
-		//META_CONPRINTF("Is mesh analyzed: %s\n", isMeshAnalyzed ? "yes" : "no");
+		META_CONPRINTF("Is mesh analyzed: %s\n", isMeshAnalyzed ? "yes" : "no");
 
 		unsigned short placeCount;
 		this->ReadData(&placeCount, sizeof(unsigned short), 1, fileHandle);
 
-		//META_CONPRINTF("Nav version: %d; BSPSize: %d; MagicNumber: %p; SubVersion: %d [v10+only]; Place Count: %d\n", version, saveBspSize, magicNumber, navMeshSubVersion, placeCount);
+		META_CONPRINTF("Nav version: %d; BSPSize: %d; MagicNumber: %p; SubVersion: %d [v10+only]; Place Count: %d\n", version, saveBspSize, magicNumber, navMeshSubVersion, placeCount);
 
 		printf("allocationg places\n");
 		List<INavMeshPlace*> *places = new List<INavMeshPlace*>();
@@ -159,7 +159,7 @@ namespace Navigation {
 
 			printf("new esh place\n");
 			places->Append(new NavMeshPlace(placeIndex + 1, placeName));
-			//META_CONPRINTF("Parsed place: %s [%d]\n", placeName, placeIndex);
+			META_CONPRINTF("Parsed place: %s [%d]\n", placeName, placeIndex);
 		}
 
 		printf("red places\n");
@@ -171,7 +171,7 @@ namespace Navigation {
 
 		bool hasUnnamedAreas = unnamedAreas != 0;
 
-		//META_CONPRINTF("Has unnamed areas: %s\n", hasUnnamedAreas ? "yes" : "no");
+		META_CONPRINTF("Has unnamed areas: %s\n", hasUnnamedAreas ? "yes" : "no");
 
 		printf("allocating areas\n");
 		IList<INavMeshArea*> *areas = new List<INavMeshArea*>();
@@ -180,7 +180,7 @@ namespace Navigation {
 		unsigned int areaCount;
 		this->ReadData(&areaCount, sizeof(unsigned int), 1, fileHandle);
 
-		//META_CONPRINTF("Area count: %d\n", areaCount);
+		META_CONPRINTF("Area count: %d\n", areaCount);
 		printf("reading areas\n");
 		for(unsigned int areaIndex = 0; areaIndex < areaCount; areaIndex++) {
 			unsigned int areaID;
@@ -204,7 +204,7 @@ namespace Navigation {
 
 			this->ReadData(&areaID, sizeof(unsigned int), 1, fileHandle);
 
-			//META_CONPRINTF("Area ID: %d\n", areaID);
+			META_CONPRINTF("Area ID: %d\n", areaID);
 
 			if(version <= 8) {
 				this->ReadData(&areaFlags, sizeof(unsigned char), 1, fileHandle);
@@ -216,7 +216,7 @@ namespace Navigation {
 				this->ReadData(&areaFlags, sizeof(unsigned int), 1, fileHandle);
 			}
 
-			//META_CONPRINTF("Area Flags: %d\n", areaFlags);
+			META_CONPRINTF("Area Flags: %d\n", areaFlags);
 			this->ReadData(&x1, sizeof(float), 1, fileHandle);
 			this->ReadData(&y1, sizeof(float), 1, fileHandle);
 			this->ReadData(&z1, sizeof(float), 1, fileHandle);
@@ -224,12 +224,12 @@ namespace Navigation {
 			this->ReadData(&y2, sizeof(float), 1, fileHandle);
 			this->ReadData(&z2, sizeof(float), 1, fileHandle);
 
-			//META_CONPRINTF("Area extent: (%f, %f, %f), (%f, %f, %f)\n", x1, y1, z1, x2, y2, z2);
+			META_CONPRINTF("Area extent: (%f, %f, %f), (%f, %f, %f)\n", x1, y1, z1, x2, y2, z2);
 
 			this->ReadData(&northEastCornerZ, sizeof(float), 1, fileHandle);
 			this->ReadData(&southWestCornerZ, sizeof(float), 1, fileHandle);
 
-			//META_CONPRINTF("Corners: NW(%f), SW(%f)\n", northEastCornerZ, southWestCornerZ);
+			META_CONPRINTF("Corners: NW(%f), SW(%f)\n", northEastCornerZ, southWestCornerZ);
 
 			// CheckWaterLevel() are we underwater in this area?
 
@@ -237,7 +237,7 @@ namespace Navigation {
 				unsigned int connectionCount;
 				this->ReadData(&connectionCount, sizeof(unsigned int), 1, fileHandle);
 
-				//META_CONPRINTF("Connection count: %d (%p)\n", connectionCount, connectionCount);
+				META_CONPRINTF("Connection count: %d (%p)\n", connectionCount, connectionCount);
 
 				for(unsigned int connectionIndex = 0; connectionIndex < connectionCount; connectionIndex++) {
 					unsigned int connectingAreaID;
@@ -249,7 +249,7 @@ namespace Navigation {
 			}
 
 			this->ReadData(&hidingSpotCount, sizeof(unsigned char), 1, fileHandle);
-			//META_CONPRINTF("Hiding Spot Count: %d\n", hidingSpotCount);
+			META_CONPRINTF("Hiding Spot Count: %d\n", hidingSpotCount);
 
 			for(unsigned int hidingSpotIndex = 0; hidingSpotIndex < hidingSpotCount; hidingSpotIndex++) {
 				unsigned int hidingSpotID;
@@ -265,7 +265,7 @@ namespace Navigation {
 
 				INavMeshHidingSpot *hidingSpot = new NavMeshHidingSpot(hidingSpotID, hidingSpotX, hidingSpotY, hidingSpotZ, hidingSpotFlags);
 				hidingSpots->Append(hidingSpot);
-				//META_CONPRINTF("Parsed hiding spot (%f, %f, %f) with ID [%p] and flags [%p]\n", hidingSpotX, hidingSpotY, hidingSpotZ, hidingSpotID, hidingSpotFlags);
+				META_CONPRINTF("Parsed hiding spot (%f, %f, %f) with ID [%p] and flags [%p]\n", hidingSpotX, hidingSpotY, hidingSpotZ, hidingSpotID, hidingSpotFlags);
 			}
 
 			// These are old but we just need to read the data.
@@ -293,7 +293,7 @@ namespace Navigation {
 
 			unsigned int encounterPathCount;
 			this->ReadData(&encounterPathCount, sizeof(unsigned int), 1, fileHandle);
-			//META_CONPRINTF("Encounter Path Count: %d\n", encounterPathCount);
+			META_CONPRINTF("Encounter Path Count: %d\n", encounterPathCount);
 
 			for(unsigned int encounterPathIndex = 0; encounterPathIndex < encounterPathCount; encounterPathIndex++) {
 				unsigned int encounterFromID;
@@ -311,7 +311,7 @@ namespace Navigation {
 				unsigned char encounterSpotCount;
 				this->ReadData(&encounterSpotCount, sizeof(unsigned char), 1, fileHandle);
 	
-				//META_CONPRINTF("Encounter [from ID %d] [from dir %p] [to ID %d] [to dir %p] [spot count %d]\n", encounterFromID, encounterFromDirection, encounterToID, encounterToDirection, encounterSpotCount);
+				META_CONPRINTF("Encounter [from ID %d] [from dir %p] [to ID %d] [to dir %p] [spot count %d]\n", encounterFromID, encounterFromDirection, encounterToID, encounterToDirection, encounterSpotCount);
 				IList<INavMeshEncounterSpot*> *encounterSpots = new List<INavMeshEncounterSpot*>();
 
 				for(int encounterSpotIndex = 0; encounterSpotIndex < encounterSpotCount; encounterSpotIndex++) {
@@ -325,7 +325,7 @@ namespace Navigation {
 
 					INavMeshEncounterSpot *encounterSpot = new NavMeshEncounterSpot(encounterSpotOrderId, encounterSpotParametricDistance);
 					encounterSpots->Append(encounterSpot);
-					//META_CONPRINTF("Encounter spot [order id %d] and [T %p]\n", encounterSpotOrderId, encounterSpotT);
+					META_CONPRINTF("Encounter spot [order id %d] and [T %p]\n", encounterSpotOrderId, encounterSpotT);
 				}
 
 				INavMeshEncounterPath *encounterPath = new NavMeshEncounterPath(encounterFromID, (NavDirType)encounterFromDirection, encounterToID, (NavDirType)encounterToDirection, encounterSpots);
@@ -334,13 +334,13 @@ namespace Navigation {
 
 			this->ReadData(&placeID, sizeof(unsigned short), 1, fileHandle);
 
-			//META_CONPRINTF("Place ID: %d\n", placeID);
+			META_CONPRINTF("Place ID: %d\n", placeID);
 
 			for(unsigned int ladderDirection = 0; ladderDirection < NAV_LADDER_DIR_COUNT; ladderDirection++) {
 				unsigned int ladderConnectionCount;
 				this->ReadData(&ladderConnectionCount, sizeof(unsigned int), 1, fileHandle);
 
-				//META_CONPRINTF("Ladder Connection Count: %d\n", ladderConnectionCount);
+				META_CONPRINTF("Ladder Connection Count: %d\n", ladderConnectionCount);
 
 				for(unsigned int ladderConnectionIndex = 0; ladderConnectionIndex < ladderConnectionCount; ladderConnectionIndex++) {
 					unsigned int ladderConnectID;
@@ -348,7 +348,7 @@ namespace Navigation {
 					
 					INavMeshLadderConnection *ladderConnection = new NavMeshLadderConnection(ladderConnectID, (NavLadderDirType)ladderDirection);
 					ladderConnections->Append(ladderConnection);
-					//META_CONPRINTF("Parsed ladder connect [ID %d]\n", ladderConnectID);
+					META_CONPRINTF("Parsed ladder connect [ID %d]\n", ladderConnectID);
 				}
 			}
 
@@ -362,13 +362,13 @@ namespace Navigation {
 
 					INavMeshCornerLightIntensity *cornerLightIntensity = new NavMeshCornerLightIntensity((NavCornerType)navCornerIndex, navCornerLightIntensity);
 					cornerLightIntensities->Append(cornerLightIntensity);
-					//META_CONPRINTF("Light intensity: [%f] [idx %d]\n", navCornerLightIntensity, navCornerIndex);
+					META_CONPRINTF("Light intensity: [%f] [idx %d]\n", navCornerLightIntensity, navCornerIndex);
 		 		}
 
 				if(version >= 16) {
 					this->ReadData(&visibleAreaCount, sizeof(unsigned int), 1, fileHandle);
 
-					//META_CONPRINTF("Visible area count: %d\n", visibleAreaCount);
+					META_CONPRINTF("Visible area count: %d\n", visibleAreaCount);
 
 					for(unsigned int visibleAreaIndex = 0; visibleAreaIndex < visibleAreaCount; visibleAreaIndex++) {
 						unsigned int visibleAreaID;
@@ -384,7 +384,7 @@ namespace Navigation {
 
 					this->ReadData(&inheritVisibilityFrom, sizeof(unsigned int), 1, fileHandle);
 
-					//META_CONPRINTF("Inherit visibilty from: %d\n", inheritVisibilityFrom);
+					META_CONPRINTF("Inherit visibilty from: %d\n", inheritVisibilityFrom);
 
 					this->ReadData(&unk01, sizeof(unsigned char), 1, fileHandle);
 				}
@@ -404,7 +404,7 @@ namespace Navigation {
 		unsigned int ladderCount;
 		this->ReadData(&ladderCount, sizeof(unsigned int), 1, fileHandle);
 		
-		//META_CONPRINTF("Ladder count: %d\n", ladderCount);
+		META_CONPRINTF("Ladder count: %d\n", ladderCount);
 		printf("reading ladders\n");
 		IList<INavMeshLadder*> *ladders = new List<INavMeshLadder*>();
 
