@@ -24,6 +24,7 @@ namespace Navigation
 {
 	extern unsigned int gHidingSpotsCount;
         extern INavFile navFile;
+        extern std::vector<HidingSpot> gHidingSpots;
 
         std::string getPath();
 	bool Load();

@@ -28,6 +28,7 @@ namespace Navigation
 {
 	unsigned int gHidingSpotsCount;
 	INavFile navFile;
+	std::vector<HidingSpot> gHidingSpots;
 
 
 	bool getPath(std::string& target)
@@ -112,6 +113,7 @@ namespace Navigation
 		
 		
 		navFile.RestoreDefaults();
+		gHidingSpots.clear();
 		std::string navPath;
 		if(!getPath(navPath))
 		{
@@ -152,37 +154,25 @@ namespace Navigation
 	bool CachePositions()
 	{
 
-		// Already cached?
-		//if (gHidingSpots.size() > 0)
-		//	return (true);
+		if (gHidingSpots.size() > 0)
+			return true;
 
-		/*Navigation::IList<Navigation::INavMeshArea*> *areas = gNavMesh->GetAreas();
 
-		unsigned int areaCount = areas->Size();
-		for (unsigned int areaI = 0; areaI < areaCount; areaI++)
+		for(const auto& area : navFile.m_areas)
 		{
-			// Get all hidingspots
-			Navigation::IList<Navigation::INavMeshHidingSpot*> *hidingSpots = areas->At(areaI)->GetHidingSpots();
-
-			unsigned int hidingSpotsCount = hidingSpots->Size();
-			for (unsigned int hidingSpotI = 0; hidingSpotI < hidingSpotsCount; hidingSpotI++)
+			for(const auto& spot : area.m_hidingSpots)
 			{
-				Navigation::INavMeshHidingSpot *hidingSpot = hidingSpots->At(hidingSpotI);
-
-				gHidingSpots.push_back(hidingSpots->At(hidingSpotI)); // Store the hiding-spot
+				gHidingSpots.push_back(spot);
+				std::cout << spot.m_pos.x << " " << spot.m_pos.y << " " << spot.m_pos.z << '\n';
 			}
 		}
 
-		// Store once to save performance
 		gHidingSpotsCount = gHidingSpots.size();
 
-		// No positions found?
-		if (gHidingSpotsCount == 0)
-			return (false);
+		if(gHidingSpotsCount == 0)
+			return false;
 
-		return (true);*/
-
-		return false;
+		return true;
 	}
 
 	/*	
