@@ -109,6 +109,9 @@ namespace Navigation
 	*/
 	bool Load()
 	{
+		std::cout << "[DEBUG] Navigation::Load()" << '\n';
+		return false;
+		/*
 		
 		navFile.RestoreDefaults();
 		std::string navPath;
@@ -138,7 +141,7 @@ namespace Navigation
 
 		std::cout << "[DEBUG] Successfully loaded nav data" << '\n';
 	
-		return true;
+		return true;*/
 	}
 
 	/*	
