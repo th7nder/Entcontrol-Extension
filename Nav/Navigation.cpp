@@ -44,22 +44,12 @@ namespace Navigation
 
 		if (!fopen(absolutePath.c_str(), "rb"))
 		{
-			printf("Navigation: Unable to find navigation mesh: %s\nTrying to extract it from the vpk-file.\n", absolutePath.c_str());
+			printf("Navigation: Unable to find navigation mesh: %s\nTrying to extract it from the bsp-file.\n", absolutePath.c_str());
 
 			absolutePath = gamepath;
-			if (strcmp(game, "cstrike") == 0)
-			{
-				absolutePath += "/cstrike_pak_dir.vpk";
-			}
-			else if (strcmp(game, "csgo") == 0)
-			{
-				absolutePath += "/csgo_pak_dir.vpk";
-			}
-			else
-			{
-				printf("Navigation: Could not find vpk-file for this game/mod.\n");
-				return false;
-			}
+			absolutePath += "/maps/";
+			absolutePath += mapname;
+			absolutePath += ".bsp";
 
 			if (HLLib::Open(absolutePath.c_str()))
 			{
