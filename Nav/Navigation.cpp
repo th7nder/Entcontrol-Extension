@@ -163,7 +163,6 @@ namespace Navigation
 			for(const auto& spot : area.m_hidingSpots)
 			{
 				gHidingSpots.push_back(spot);
-				std::cout << spot.m_pos.x << " " << spot.m_pos.y << " " << spot.m_pos.z << '\n';
 			}
 		}
 
