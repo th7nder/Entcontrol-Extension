@@ -160,7 +160,7 @@ ifeq "$(OS)" "Darwin"
 	CPP = $(CPP_OSX)
 	LIB_EXT = dylib
 	CFLAGS += -DOSX -D_OSX
-	LINK += -dynamiclib -lstdc++ -mmacosx-version-min=10.5
+	LINK += -dynamiclib -lstdc++ -mmacosx-version-min=10.13
 else
 	LIB_EXT = so
 	CFLAGS += -D_LINUX
