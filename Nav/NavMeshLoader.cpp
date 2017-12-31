@@ -202,6 +202,28 @@ namespace Navigation {
 			unsigned short placeID = 0;
 			unsigned char unk01 = 0;
 
+
+
+/*
+
+		if mesh.MajorVersion <= 8 {
+			var flags byte
+			p.read(&flags)
+			currArea.Flags = uint32(flags)
+		} else if mesh.MajorVersion < 13 {
+			var flags uint16
+			p.read(&flags)
+			currArea.Flags = uint32(flags)
+		} else {
+			p.read(&currArea.Flags)
+		}
+
+		p.read(&currArea.NorthWest)
+		p.read(&currArea.SouthEast)
+		p.read(&currArea.NorthEastZ)
+		p.read(&currArea.SouthWestZ)
+
+*/
 			this->ReadData(&areaID, sizeof(unsigned int), 1, fileHandle);
 
 			META_CONPRINTF("Area ID: %d\n", areaID);
@@ -224,6 +246,8 @@ namespace Navigation {
 			this->ReadData(&y2, sizeof(float), 1, fileHandle);
 			this->ReadData(&z2, sizeof(float), 1, fileHandle);
 
+
+
 			META_CONPRINTF("Area extent: (%f, %f, %f), (%f, %f, %f)\n", x1, y1, z1, x2, y2, z2);
 
 			this->ReadData(&northEastCornerZ, sizeof(float), 1, fileHandle);
@@ -238,6 +262,7 @@ namespace Navigation {
 				this->ReadData(&connectionCount, sizeof(unsigned int), 1, fileHandle);
 
 				META_CONPRINTF("Connection count: %d (%p)\n", connectionCount, connectionCount);
+				META_CONPRINTF("Nav version: %d; BSPSize: %d; MagicNumber: %p; SubVersion: %d [v10+only]; Place Count: %d\n", version, saveBspSize, magicNumber, navMeshSubVersion, placeCount);
 
 				for(unsigned int connectionIndex = 0; connectionIndex < connectionCount; connectionIndex++) {
 					unsigned int connectingAreaID;
