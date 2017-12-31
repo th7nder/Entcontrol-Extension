@@ -243,6 +243,7 @@ default: all
 clean: check
 	rm -rf $(BIN_DIR)/*.o
 	rm -rf $(BIN_DIR)/sdk/*.o
+	rm -rf $(BIN_DIR)/Bugs/*.o
 	rm -rf $(BIN_DIR)/Entity/*.o
 	rm -rf $(BIN_DIR)/Nav/*.o
 	rm -rf $(BIN_DIR)/HLLib/*.o
