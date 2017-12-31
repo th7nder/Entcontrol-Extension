@@ -29,5 +29,5 @@ namespace Navigation
         std::string getPath();
 	bool Load();
 	bool CachePositions();
-	//INavMeshHidingSpot *GetNextHidingSpot();
+        HidingSpot GetNextHidingSpot();
 }

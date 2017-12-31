@@ -181,7 +181,7 @@ namespace Navigation
 		Increment the list-counter and return the position.
 	=============================================================	
 	*/
-	/*INavMeshHidingSpot *GetNextHidingSpot()
+	HidingSpot GetNextHidingSpot()
 	{
 		static unsigned int posIndex = 0;
 
@@ -189,5 +189,5 @@ namespace Navigation
 			posIndex = 0; // Start from the beginning
 
 		return (gHidingSpots[posIndex++]);
-	}*/
+	}
 }
