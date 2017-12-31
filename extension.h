@@ -21,7 +21,7 @@
 #define _INCLUDE_SOURCEMOD_EXTENSION_PROPER_H_
 
 // Undefine Dlibs Assert
-#undef COMPILE_TIME_ASSERT
+//#undef COMPILE_TIME_ASSERT
 
 /**
  * @file extension.h

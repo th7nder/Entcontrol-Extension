@@ -30,14 +30,11 @@ namespace Navigation
 	INavFile navFile;
 
 
-	std::string getPath()
+	bool getPath(std::string& target)
 	{
 		const char *mapname = gamehelpers->GetCurrentMap();
 		const char *gamepath = g_pSM->GetGamePath();
 		const char *game = g_pSM->GetGameFolderName();
-
-		// Remove all the stored positions
-		//gHidingSpots.clear();
 
 		std::string relativePath, absolutePath;
 		absolutePath = gamepath;
@@ -61,7 +58,7 @@ namespace Navigation
 			else
 			{
 				printf("Navigation: Could not find vpk-file for this game/mod.\n");
-				return (false);
+				return false;
 			}
 
 			if (HLLib::Open(absolutePath.c_str()))
@@ -98,7 +95,10 @@ namespace Navigation
 
 		HLLib::Close();
 
-		return 
+		char navPath[1024];
+		g_pSM->BuildPath(Path_Game, navPath, sizeof(navPath), "maps\\%s.nav", mapname);
+		target = navPath;
+		return true;
 	}
 
 	/*	
@@ -111,28 +111,34 @@ namespace Navigation
 	{
 		
 		navFile.RestoreDefaults();
-
-       		/*printf("new Navigation::NavMeshLoader\n");
-		Navigation::NavMeshLoader *nav = new Navigation::NavMeshLoader(mapname); 
-
-		char error[1024];
-		gNavMesh = nav->Load(error, sizeof(error));
-		if(gNavMesh == NULL)
+		std::string navPath;
+		if(!getPath(navPath))
 		{
-			printf("gNavMeshError, null: %s", error);
+			std::cerr << "[EC] Couldn't get nav path for this map" << '\n';
 			return false;
 		}
 
-		// Nav is not needed anylonger
-		nav->Destroy();
+		std::cout << "[DEBUG] navPath found: " << navPath << '\n';
 
-		if (gNavMesh == NULL)
-			return (false);
+       		std::ifstream ifs(navPath, std::ios::binary);
 
-		return (true);*/
+		if (!ifs.is_open())
+		{
+			std::cerr << "[EC] Couldn't open nav file" << '\n';
+			return false;
+		}
 
+		if (!navFile.Load(ifs))
+		{
+			std::cerr << "[EC] Couldn't load nav file" << '\n';
+			return false;
+		}
 
-		return false;
+		ifs.close();
+
+		std::cout << "[DEBUG] Successfully loaded nav data" << '\n';
+	
+		return true;
 	}
 
 	/*	
