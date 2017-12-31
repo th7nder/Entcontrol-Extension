@@ -189,4 +189,15 @@ namespace Navigation
 
 		return (gHidingSpots[posIndex++]);
 	}
+
+	int GetHidingSpotsCount()
+	{
+		return gHidingSpotsCount;
+	}
+	
+
+	HidingSpot GetHidingSpot(unsigned int posIndex)
+	{
+		return gHidingSpots[posIndex];
+	}
 }

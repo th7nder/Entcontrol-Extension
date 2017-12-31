@@ -136,10 +136,31 @@ cell_t Navigation_CachePositions(IPluginContext *pContext, const cell_t *params)
 	Increment the list-counter and return the position.
 =============================================================
 */
-cell_t Navigation_GetNextHidingSpot(IPluginContext *pContext, const cell_t *params)
+
+cell_t Navigation_GetHidingSpot(IPluginContext *pContext, const cell_t *params)
 {
 
-	// TO DO
+	cell_t *pos;
+	unsigned int posIndex = params[1];
+	pContext->LocalToPhysAddr(params[2], &pos);
+
+	HidingSpot hidingSpot = Navigation::GetHidingSpot(posIndex);
+
+	pos[0] = sp_ftoc(hidingSpot.m_pos.x);
+	pos[1] = sp_ftoc(hidingSpot.m_pos.y);
+	pos[2] = sp_ftoc(hidingSpot.m_pos.z);
+
+	return (true);
+}
+
+cell_t Navigation_GetHidingSpotsCount(IPluginContext *pContext, const cell_t *params)
+{
+	return Navigation::GetHidingSpotsCount();
+}
+
+
+cell_t Navigation_GetNextHidingSpot(IPluginContext *pContext, const cell_t *params)
+{
 	cell_t *pos;
 	pContext->LocalToPhysAddr(params[1], &pos);
 
@@ -331,6 +352,8 @@ sp_nativeinfo_t natives[] =
 	{"EC_Nav_Load",						Navigation_Load},
 	{"EC_Nav_CachePositions",			Navigation_CachePositions},
 	{"EC_Nav_GetNextHidingSpot",		Navigation_GetNextHidingSpot},
+	{"EC_Nav_GetHidingSpot", Navigation_GetHidingSpot},
+	{"EC_Nav_GetHidingSpotsCount", Navigation_GetHidingSpotsCount},
 	{"EC_Web_GetPort",					Webserver_GetPort},
 	{"EC_Web_GetIP",					Webserver_GetIP},
 	{"EC_HLLib_OpenFile",				HLLib_OpenFile},

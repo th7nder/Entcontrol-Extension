@@ -30,4 +30,6 @@ namespace Navigation
 	bool Load();
 	bool CachePositions();
         HidingSpot GetNextHidingSpot();
+        HidingSpot GetHidingSpot(unsigned int posIndex);
+        int GetHidingSpotsCount();
 }
