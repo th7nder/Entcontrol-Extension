@@ -26,31 +26,19 @@
 
 namespace Navigation
 {
-	Navigation::INavMesh *gNavMesh = NULL;
 	unsigned int gHidingSpotsCount;
-	std::vector<Navigation::INavMeshHidingSpot*> gHidingSpots;
+	INavFile navFile;
 
-	/*	
-	=============================================================
-		Navigation_Load
-		Read and parse .nav-files
-	=============================================================	
-	*/
-	bool Load()
+
+	std::string getPath()
 	{
 		const char *mapname = gamehelpers->GetCurrentMap();
 		const char *gamepath = g_pSM->GetGamePath();
 		const char *game = g_pSM->GetGameFolderName();
 
 		// Remove all the stored positions
-		gHidingSpots.clear();
-        printf("deleting gNavMesh\n");
-        if (gNavMesh)
-        {
-            delete gNavMesh;
-            gNavMesh = NULL;
-        } // Already loaded? Maybe a new map?
-        printf("deleted gNavMesh\n");
+		//gHidingSpots.clear();
+
 		std::string relativePath, absolutePath;
 		absolutePath = gamepath;
 		absolutePath += "/maps/";
@@ -108,11 +96,23 @@ namespace Navigation
 			}
 		}
 
-        printf("hllib close");
-
 		HLLib::Close();
 
-        printf("new Navigation::NavMeshLoader\n");
+		return 
+	}
+
+	/*	
+	=============================================================
+		Navigation_Load
+		Read and parse .nav-files
+	=============================================================	
+	*/
+	bool Load()
+	{
+		
+		navFile.RestoreDefaults();
+
+       		/*printf("new Navigation::NavMeshLoader\n");
 		Navigation::NavMeshLoader *nav = new Navigation::NavMeshLoader(mapname); 
 
 		char error[1024];
@@ -129,7 +129,10 @@ namespace Navigation
 		if (gNavMesh == NULL)
 			return (false);
 
-		return (true);
+		return (true);*/
+
+
+		return false;
 	}
 
 	/*	
@@ -141,14 +144,12 @@ namespace Navigation
 	*/
 	bool CachePositions()
 	{
-		if (!gNavMesh)
-			return (false);
 
 		// Already cached?
-		if (gHidingSpots.size() > 0)
-			return (true);
+		//if (gHidingSpots.size() > 0)
+		//	return (true);
 
-		Navigation::IList<Navigation::INavMeshArea*> *areas = gNavMesh->GetAreas();
+		/*Navigation::IList<Navigation::INavMeshArea*> *areas = gNavMesh->GetAreas();
 
 		unsigned int areaCount = areas->Size();
 		for (unsigned int areaI = 0; areaI < areaCount; areaI++)
@@ -172,7 +173,9 @@ namespace Navigation
 		if (gHidingSpotsCount == 0)
 			return (false);
 
-		return (true);
+		return (true);*/
+
+		return false;
 	}
 
 	/*	
@@ -181,7 +184,7 @@ namespace Navigation
 		Increment the list-counter and return the position.
 	=============================================================	
 	*/
-	INavMeshHidingSpot *GetNextHidingSpot()
+	/*INavMeshHidingSpot *GetNextHidingSpot()
 	{
 		static unsigned int posIndex = 0;
 
@@ -189,5 +192,5 @@ namespace Navigation
 			posIndex = 0; // Start from the beginning
 
 		return (gHidingSpots[posIndex++]);
-	}
+	}*/
 }

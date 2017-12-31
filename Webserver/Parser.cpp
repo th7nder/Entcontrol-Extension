@@ -142,7 +142,7 @@ namespace HTTP
 						result = "You are not connected!";
 					}
 				}
-				else if (function == "GetNavHidingSpots")
+				/*else if (function == "GetNavHidingSpots")
 				{
 					if (Navigation::gNavMesh)
 						result = dlib::cast_to_string(Navigation::gHidingSpotsCount);
@@ -197,7 +197,7 @@ namespace HTTP
 						result = dlib::cast_to_string(Navigation::gNavMesh->GetSubVersion());
 					else
 						result = "Navigation not loaded.";
-				}
+				}*/
 				else if (function == "IsLANServer")
 				{
 					result = gamehelpers->IsLANServer() ? "true" : "false";

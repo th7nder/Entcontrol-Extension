@@ -138,14 +138,16 @@ cell_t Navigation_CachePositions(IPluginContext *pContext, const cell_t *params)
 */
 cell_t Navigation_GetNextHidingSpot(IPluginContext *pContext, const cell_t *params)
 {
-	cell_t *pos;
+
+	// TO DO
+	/*cell_t *pos;
 	pContext->LocalToPhysAddr(params[1], &pos);
 
 	Navigation::INavMeshHidingSpot *hidingSpot = Navigation::GetNextHidingSpot();
 
 	pos[0] = sp_ftoc(hidingSpot->GetX());
 	pos[1] = sp_ftoc(hidingSpot->GetY());
-	pos[2] = sp_ftoc(hidingSpot->GetZ());
+	pos[2] = sp_ftoc(hidingSpot->GetZ());*/
 
 	return (true);
 }

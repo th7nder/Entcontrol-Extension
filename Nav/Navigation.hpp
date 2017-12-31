@@ -17,15 +17,16 @@
 // =============================================================
 
 #include <vector>
-#include "Nav/NavMeshLoader.h"
+#include "INavFile.hpp"
+#include <iostream>
 
 namespace Navigation
 {
-	extern INavMesh *gNavMesh;
 	extern unsigned int gHidingSpotsCount;
-	extern std::vector<INavMeshHidingSpot*> gHidingSpots;
+        extern INavFile navFile;
 
+        std::string getPath();
 	bool Load();
 	bool CachePositions();
-	INavMeshHidingSpot *GetNextHidingSpot();
+	//INavMeshHidingSpot *GetNextHidingSpot();
 }
