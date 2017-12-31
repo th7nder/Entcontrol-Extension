@@ -9,7 +9,7 @@
 #include "./nav_hidingspot.hpp"
 
 #include "../../hl2sdk-csgo/public/mathlib/vector.h"
-
+#include <iostream>
 #include <vector>
 
 
