@@ -58,7 +58,7 @@ namespace HTTP
 							if (adminsys->FindFlag(line[1], &flag))
 							{
 								if (!adminsys->GetAdminFlag(adminID, flag, Access_Effective))
-									return ("You don´t have access to this file.");
+									return ("You dont have access to this file.");
 							}
 							else
 							{

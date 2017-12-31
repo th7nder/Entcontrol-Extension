@@ -22,7 +22,8 @@ namespace Navigation {
 		bool Insert(T item, unsigned int index) {
 			size_t size = this->items->size();
 
-			if(index < 0 || index > size) {
+			if(
+				index > size) {
 				return false;
 			}
 
